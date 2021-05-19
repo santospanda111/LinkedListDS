@@ -97,6 +97,34 @@ public class MyLinkedList {
         }
         return tempNode.getNext();
     }
+
+    /**
+     * this method will delete the given element.
+     * @param removeNode
+     */
+    public void remove(INode removeNode) {
+        INode myTempNode = head;
+        while (myTempNode.getNext() != removeNode) {
+            myTempNode = myTempNode.getNext();
+        }
+        INode myTempNode2 = myTempNode;
+        myTempNode2 = myTempNode.getNext().getNext();
+        myTempNode.setNext(myTempNode2);
+    }
+
+    /**
+     * this method will count and give the size of the linked list as an output.
+     * @param head
+     */
+    public void getSize(INode head) {
+        int nodeCount = 0;
+        INode temp = head;
+        while (temp != null) {
+            nodeCount++;
+            temp = temp.getNext();
+        }
+        System.out.println("Size: " + nodeCount);
+    }
     /**
      * this will print the node.
      */

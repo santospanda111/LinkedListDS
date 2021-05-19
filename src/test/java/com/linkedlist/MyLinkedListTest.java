@@ -131,4 +131,29 @@ public class MyLinkedListTest {
         boolean result = myLinkedList.head.equals(myFirstNode) &&  myLinkedList.head.getNext().equals(mySecondNode) &&  myLinkedList.head.getNext().getNext().equals(myThirdNode) &&  myLinkedList.tail.equals(myFourthNode);
         Assertions.assertTrue(result);
     }
+
+    /**
+     * this test case will check that the given method will remove the given element
+     * getsize will return the size of the linked list after deletion.
+     */
+    @Test
+    public void Deleteing40InLinkedListshouldPassTest(){
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.append(myFourthNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.remove(myThirdNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.getSize(myFirstNode);
+
+        boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myFourthNode);
+        Assertions.assertTrue(result);
+    }
 }
