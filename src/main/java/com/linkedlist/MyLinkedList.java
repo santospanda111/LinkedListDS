@@ -60,6 +60,16 @@ public class MyLinkedList {
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
     }
+
+    /**
+     * this pop method will delete the first value of the linkedlist.
+     * @return
+     */
+    public INode pop() {
+        INode  tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
+    }
     /**
      * this will print the node.
      */

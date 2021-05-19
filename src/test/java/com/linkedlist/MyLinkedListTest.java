@@ -57,4 +57,23 @@ public class MyLinkedListTest {
         boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
         Assertions.assertTrue(result);
     }
+
+    /**
+     * here i have used append as well as pop to check the delete(pop) method is working properly or not.
+     */
+    @Test
+    public void given3NumberWhenDeletedHeadShouldPassTheLinkedListTest() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.pop();
+        myLinkedList.printMyNodes();
+        boolean result = myLinkedList.head.equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
+        Assertions.assertTrue(result);
+    }
 }
