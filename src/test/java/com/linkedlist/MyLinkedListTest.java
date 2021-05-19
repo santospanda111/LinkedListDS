@@ -111,4 +111,24 @@ public class MyLinkedListTest {
         myLinkedList.printMyNodes();
         Assertions.assertEquals(30, myLinkedList.search(mySecondNode).getKey());
     }
+
+    /**
+     * It'll check the insertion at a particular position.
+     */
+    @Test
+    public void AfterInserting40After30ShouldPassTheTest(){
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myFourthNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.insert(myLinkedList.search(mySecondNode), myThirdNode);
+        myLinkedList.printMyNodes();
+        boolean result = myLinkedList.head.equals(myFirstNode) &&  myLinkedList.head.getNext().equals(mySecondNode) &&  myLinkedList.head.getNext().getNext().equals(myThirdNode) &&  myLinkedList.tail.equals(myFourthNode);
+        Assertions.assertTrue(result);
+    }
 }
