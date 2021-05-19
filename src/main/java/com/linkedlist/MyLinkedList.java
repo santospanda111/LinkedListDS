@@ -32,9 +32,23 @@ public class MyLinkedList {
             this.head = newNode;
             this.head.setNext(tempNode);
         }
-
     }
 
+    /**
+     * added append method to append values in the linked list.
+     * @param myNode
+     */
+    public void append(INode myNode) {
+        if (this.head == null) {
+            this.head = myNode;
+        }
+        if (this.tail == null) {
+            this.tail = myNode;
+        } else {
+            this.tail.setNext(myNode);
+            this.tail = myNode;
+        }
+    }
     /**
      * this will print the node.
      */
